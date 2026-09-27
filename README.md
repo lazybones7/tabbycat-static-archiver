@@ -26,8 +26,11 @@ streamlit run app.py
 ## Deploying on Render
 
 1. Push this folder to a GitHub repo.
-2. In Render, create a new Web Service pointing at the repo. Render
-   should detect the `Dockerfile` and offer Docker as the runtime.
+
+2. Click **Deploy to Render**
+
+   [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+2. Render should detect the `Dockerfile` and offer Docker as the runtime.
 3. Known concurrency limit: on Render's Starter plan (512MB RAM), plan
    for one archiving job at a time. Each job launches its own Chromium
    instance, so two people archiving at once risks an out-of-memory
