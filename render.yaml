@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: tabbycat-static-archiver
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
