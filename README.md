@@ -1,6 +1,5 @@
 # Tabbycat Static Archiver
 
-A Streamlit app version of the Tabbycat Static Archive Colab notebook.
 Strips everything public on a Tabbycat tournament site into flat static
 HTML/CSS/JS and zips it for download. No login, no environment
 variables required, since all the data it touches is public.
@@ -29,12 +28,7 @@ streamlit run app.py
 1. Push this folder to a GitHub repo.
 2. In Render, create a new Web Service pointing at the repo. Render
    should detect the `Dockerfile` and offer Docker as the runtime.
-3. Render's disks are ephemeral on redeploy or restart. This app only
-   writes to `/tmp`, and the download button appears right after each
-   run finishes, so nothing needs to persist between runs.
-4. Known concurrency limit: on Render's Starter plan (512MB RAM), plan
+3. Known concurrency limit: on Render's Starter plan (512MB RAM), plan
    for one archiving job at a time. Each job launches its own Chromium
    instance, so two people archiving at once risks an out-of-memory
-   crash that kills the whole service for everyone using it. A queue
-   or lock to handle this politely is a possible future addition, not
-   built yet.
+   crash that kills the whole service for everyone using it.
